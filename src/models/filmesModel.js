@@ -56,4 +56,14 @@ module.exports = {
       });
     });
   },
+
+  liberarPool: () => {
+    db.end((err) => {
+      if (err) {
+        console.error('Erro ao encerrar o pool de conexões:', err);
+      } else {
+        console.log('Pool de conexões encerrado com sucesso.');
+      }
+    });
+  },
 };
